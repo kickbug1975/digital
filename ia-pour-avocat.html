@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="description" content="Découvrez comment l'Intelligence Artificielle transforme le quotidien des cabinets d'avocats en Belgique. Analyse de contrats, automatisation et gain de temps facturable.">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="IA pour Avocats &amp; Cabinets Juridiques en Belgique | Digital Technology">
+    <meta property="og:description" content="Automatisez l'analyse de contrats et libérez jusqu'à 30% de temps facturable supplémentaire.">
+    <meta property="og:image" content="https://www.digitaltechnology.be/asset/intelligence-artificielle-avocat.png">
+    <meta property="og:url" content="https://www.digitaltechnology.be/ia-pour-avocat.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="canonical" href="https://www.digitaltechnology.be/ia-pour-avocat.html" />
+    <title>IA pour Avocats &amp; Cabinets Juridiques en Belgique | Digital Technology</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .text-glow-primary { text-shadow: 0 0 15px rgba(26, 66, 136, 0.2); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+    
+    <!-- Service Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Intelligence Artificielle pour Avocats",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Digital Technology",
+        "url": "https://www.digitaltechnology.be"
+      },
+      "description": "Automatisez l'analyse de contrats, facilitez la recherche de jurisprudence et libérez jusqu'à 30% de temps facturable supplémentaire. Sans compromis sur le secret professionnel. <a href="guide-ia-pme-2026.html" class="text-primary/80 hover:underline text-base">Consultez notre guide IA 2026 pour PME →</a>",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Belgique"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services IA",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Audit IA Gratuit"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "ChatGPT est-il légal et sécurisé pour rédiger mes conclusions ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non s'il est utilisé en version grand-public, car vos données nourrissent le modèle public d'OpenAI, brisant le secret professionnel. Oui, si nous déployons une version chiffrée de bout en bout (Private LLM)."
+        }
+      }, {
+        "@type": "Question",
+        "name": "L'IA peut-elle s'intégrer directement dans Kleos ou Secib ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolument. Nous utilisons les API existantes de ces logiciels pour faire le pont. L'IA peut automatiquement récupérer un document, en extraire la substance et l'injecter directement dans le dossier."
+        }
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Accueil",
+                "item": "https://www.digitaltechnology.be/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Secteurs",
+                "item": "https://www.digitaltechnology.be/index.html#secteurs"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Cabinets d'Avocats",
+                "item": "https://www.digitaltechnology.be/ia-pour-avocat.html"
+            }
+        ]
+    }
+    </script>
+    <link rel="icon" type="image/png" href="asset/logo_icon_navy.png">
+</head>
+
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary-container">
+
+    <!-- Top Navigation -->
+    <nav class="header fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_32px_32px_-4px_rgba(0,0,0,0.06)] transition-all">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <span class="material-symbols-outlined text-primary group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                <img src="asset/logo_icon_navy.png" alt="Logo Digital Technology" loading="lazy" class="h-8 w-auto group-hover:rotate-12 transition-transform duration-500">
+                <span class="text-2xl font-black text-on-surface tracking-tighter font-headline">Humain &amp; IA</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-on-surface/70 justify-center hover:text-on-surface transition-colors font-headline font-bold tracking-tight" href="#enjeux">Enjeux</a>
+                <a class="text-on-surface/70 hover:text-on-surface transition-colors font-headline font-bold tracking-tight" href="#solutions">Solutions IA</a>
+                <a class="text-on-surface/70 hover:text-on-surface transition-colors font-headline font-bold tracking-tight" href="#securite">Sécurité</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="audit-ia.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-headline font-bold hover:scale-105 active:scale-95 transition-all">
+                    Audit IA Gratuit
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Breadcrumbs -->
+        <nav aria-label="Breadcrumb" class="absolute top-24 left-0 w-full z-20">
+            <div class="max-w-7xl mx-auto px-8 border-b border-on-surface/5 pb-2">
+                <ol class="flex items-center space-x-2 text-sm text-on-surface-variant font-label">
+                    <li><a href="index.html" class="hover:text-primary transition-colors">Accueil</a></li>
+                    <li><span class="px-2 text-outline-variant">/</span></li>
+                    <li><a href="index.html#secteurs" class="hover:text-primary transition-colors">Secteurs</a></li>
+                    <li><span class="px-2 text-outline-variant">/</span></li>
+                    <li class="text-on-surface font-bold" aria-current="page">Cabinets d'Avocats</li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="relative min-h-[80vh] flex items-center pt-20 overflow-hidden" id="accueil">
+            <div class="absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-primary-container/20 blur-[100px] rounded-full"></div>
+            
+            <div class="max-w-7xl mx-auto px-8 w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+                <div class="space-y-8 reveal">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/20">
+                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        <span class="font-label text-xs uppercase tracking-widest text-primary">Secteur Juridique</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] font-headline text-on-surface">
+                        L’IA au service des <span class="text-primary text-glow-primary">Cabinets d'Avocats</span> belges.
+                    </h1>
+                    <p class="text-xl text-on-surface-variant max-w-lg font-light leading-relaxed">
+                        Automatisez l'analyse de contrats, facilitez la recherche de jurisprudence et libérez jusqu'à 30% de temps facturable supplémentaire. Sans compromis sur le secret professionnel. <a href="guide-ia-pme-2026.html" class="text-primary/80 hover:underline text-base">Consultez notre guide IA 2026 pour PME →</a>
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="audit-ia.html" class="bg-primary text-on-secondary-container px-8 py-4 rounded-full font-bold text-lg hover:shadow-[0_0_25px_rgba(26, 66, 136, 0.2)] transition-all flex items-center gap-2 group active:scale-95">
+                            Évaluer ma maturité IA
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Visual -->
+                <div class="relative reveal delay-100">
+                    <div class="aspect-square rounded-3xl overflow-hidden relative glass-panel p-2">
+                        <img alt="Intelligence Artificielle pour Avocats et analyse de contrats en Belgique" class="w-full h-full object-cover rounded-2xl opacity-80" src="asset/intelligence-artificielle-avocat.png" />
+                        <div class="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent"></div>
+                    </div>
+                    <!-- Floating Info Card -->
+                    <div class="absolute -bottom-6 -left-6 glass-panel p-6 rounded-2xl border border-on-surface/10 shadow-2xl max-w-xs hidden md:block">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+                                <span class="material-symbols-outlined text-on-secondary-container">gavel</span>
+                            </div>
+                            <div class="font-label text-sm font-bold text-on-surface uppercase tracking-tighter leading-none">Intelligence<br/>Juridique</div>
+                        </div>
+                        <p class="text-xs text-on-surface-variant font-medium">Une IA entraînée à comprendre la complexité du droit belge.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logiciels Juridiques -->
+        <section class="py-12 bg-background border-b border-on-surface/5">
+            <div class="max-w-7xl mx-auto px-8 text-center reveal">
+                <p class="font-label text-sm uppercase tracking-widest text-on-surface-variant font-bold mb-8">Intégration transparente via API avec les leaders de la LégalTech en Belgique</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                    <div class="text-xl font-black font-headline text-on-surface">Kleos <span class="font-light text-sm block text-on-surface-variant">Wolters Kluwer</span></div>
+                    <div class="text-xl font-black font-headline text-on-surface">Secib / Secinba <span class="font-light text-sm block text-on-surface-variant">Brain</span></div>
+                    <div class="text-xl font-black font-headline text-on-surface">Cicéron <span class="font-light text-sm block text-on-surface-variant">Microsoft 365</span></div>
+                    <div class="text-xl font-black font-headline text-on-surface">DPA <span class="font-light text-sm block text-on-surface-variant">Deposit &amp; J-Box</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Les Enjeux -->
+        <section class="py-24 bg-surface-container-low" id="enjeux">
+            <div class="max-w-7xl mx-auto px-8 reveal">
+                <h2 class="font-label text-primary text-sm font-bold uppercase tracking-[0.3em] mb-4 text-center">Le Constat</h2>
+                <h3 class="text-3xl md:text-4xl font-black font-headline text-on-surface text-center mb-16">Les 3 freins à la croissance de votre cabinet</h3>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-3xl bg-background border border-on-surface/5">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-6">travel_explore</span>
+                        <h4 class="text-xl font-bold text-on-surface mb-3">L'investigation fragmentée</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Perdre des heures facturables à recouper manuellement des centaines d'onglets pour un "Background Check" (BCE, réseaux, presse). Un processus chronophage sujet aux angles morts.</p>
+                    </div>
+                    <div class="p-8 rounded-3xl bg-background border border-on-surface/5">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-6">manage_search</span>
+                        <h4 class="text-xl font-bold text-on-surface mb-3">La recherche standard est obsolète</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Retrouver la jurisprudence matinale ou le bon attendu de principe vous force à lire des dizaines de pages. Les bases traditionnelles ne comprennent pas l'intention sémantique complexe.</p>
+                    </div>
+                    <div class="p-8 rounded-3xl bg-background border border-on-surface/5">
+                        <span class="material-symbols-outlined text-4xl text-primary mb-6">psychology</span>
+                        <h4 class="text-xl font-bold text-on-surface mb-3">L'Asymétrie stratégique</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Sans outil d'agrégation, la "philosophie" secrète d'un magistrat ou tribunal courtier est inexploitable. L'intuition remplace la statistique sur des milliers de décisions de justice.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cas d'usage -->
+        <section class="py-32 bg-background" id="solutions">
+            <div class="max-w-7xl mx-auto px-8">
+                <h2 class="font-label text-primary text-sm font-bold uppercase tracking-[0.3em] mb-4">Cas Concrets</h2>
+                <h3 class="text-4xl md:text-5xl font-black font-headline text-on-surface mb-16">L'Intelligence Artificielle appliquée au Droit</h3>
+                
+                <div class="space-y-6">
+                    <!-- Cas 1 -->
+                    <div class="glass-panel p-10 rounded-3xl border border-on-surface/5 flex flex-col md:flex-row gap-8 items-center reveal">
+                        <div class="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-3xl text-primary">manage_search</span>
+                        </div>
+                        <div class="grow">
+                            <h4 class="text-2xl font-bold text-on-surface mb-2">OSINT Juridique &amp; KYB Automatisé</h4>
+                            <p class="text-on-surface-variant leading-relaxed">Un agent IA dédié agrège instantanément les bases publiques (BCE, réseaux, Pappers, presse) pour générer un profil financier et systémique complet d'une partie adverse avant un contentieux.</p>
+                        </div>
+                        <div class="shrink-0 text-right md:border-l border-on-surface/10 md:pl-8 pt-4 md:pt-0">
+                            <div class="text-3xl font-black text-primary">-90%</div>
+                            <div class="text-xs uppercase font-label tracking-widest text-on-surface/50">Temps de collecte</div>
+                        </div>
+                    </div>
+
+                    <!-- Cas 2 -->
+                    <div class="glass-panel p-10 rounded-3xl border border-on-surface/5 flex flex-col md:flex-row gap-8 items-center reveal">
+                        <div class="w-16 h-16 rounded-2xl bg-primary-container/30 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-3xl text-primary">account_tree</span>
+                        </div>
+                        <div class="grow">
+                            <h4 class="text-2xl font-bold text-on-surface mb-2">Moteur Sémantique de Jurisprudence</h4>
+                            <p class="text-on-surface-variant leading-relaxed">Posez une question complexe à Légifrance ou à vos archives. L'IA comprend le contexte juridique, isole l'attendu de principe exact et fournit la source vérifiée sans hallucination.</p>
+                        </div>
+                        <div class="shrink-0 text-right md:border-l border-on-surface/10 md:pl-8 pt-4 md:pt-0">
+                            <div class="text-3xl font-black text-primary">100%</div>
+                            <div class="text-xs uppercase font-label tracking-widest text-on-surface/50">Pertinence Isolée</div>
+                        </div>
+                    </div>
+
+                    <!-- Cas 3 -->
+                    <div class="glass-panel p-10 rounded-3xl border border-on-surface/5 flex flex-col md:flex-row gap-8 items-center reveal">
+                        <div class="w-16 h-16 rounded-2xl bg-tertiary/20 flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-3xl text-tertiary" style="color:#ffb86f">psychology</span>
+                        </div>
+                        <div class="grow">
+                            <h4 class="text-2xl font-bold text-on-surface mb-2">Justice Prédictive &amp; Profilage de Magistrature</h4>
+                            <p class="text-on-surface-variant leading-relaxed">Analysez des milliers de verdicts passés pour déceler la "philosophie" d'un magistrat spécifique. Anticipez les arguments adverses et adaptez mathématiquement votre plaidoirie.</p>
+                        </div>
+                        <div class="shrink-0 text-right md:border-l border-on-surface/10 md:pl-8 pt-4 md:pt-0">
+                            <div class="text-3xl font-black text-primary">x10</div>
+                            <div class="text-xs uppercase font-label tracking-widest text-on-surface/50">Précision Stratégique</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SEO -->
+        <section class="py-24 bg-surface-container-highest" id="faq">
+            <div class="max-w-4xl mx-auto px-8 reveal">
+                <h2 class="font-label text-primary text-sm font-bold uppercase tracking-[0.3em] mb-4 text-center">Foire Aux Questions</h2>
+                <h3 class="text-3xl md:text-5xl font-black font-headline text-on-surface text-center mb-16">Questions Fréquentes</h3>
+                
+                <div class="space-y-4">
+                    <details class="group bg-background rounded-2xl border border-on-surface/5 overflow-hidden transition-all open:shadow-lg">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-on-surface text-lg">
+                            ChatGPT est-il légal et sécurisé pour rédiger mes conclusions ?
+                            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-on-surface-variant leading-relaxed">
+                            <strong>Non s'il est utilisé en version grand-public</strong>, car vos données nourrissent le modèle public d'OpenAI, brisant le secret professionnel. <strong>Oui, si nous déployons une version chiffrée de bout en bout (Private LLM).</strong> Les données sont alors anonymisées, traitées sur des serveurs cloisonnés en Europe (ou serveurs locaux On-Premise) et ne sont ni stockées ni utilisées pour entraîner l'IA publique.
+                        </div>
+                    </details>
+                    <details class="group bg-background rounded-2xl border border-on-surface/5 overflow-hidden transition-all open:shadow-lg">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-on-surface text-lg">
+                            L'IA peut-elle s'intégrer directement dans Kleos ou Secib ?
+                            <span class="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-on-surface-variant leading-relaxed">
+                            Absolument. Nous utilisons les API existantes de ces logiciels pour faire le pont. L'IA peut automatiquement récupérer un document, en extraire la substance (ex: résumé de la partie adverse) et l'injecter directement dans le champ de la note du dossier sur votre plateforme existante.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="py-24 bg-surface-container-low" id="securite">
+            <div class="max-w-4xl mx-auto px-8 text-center reveal">
+                <span class="material-symbols-outlined text-5xl text-primary mb-6">lock</span>
+                <h3 class="text-3xl md:text-5xl font-black font-headline text-on-surface mb-8">Le Secret Professionnel est sacré.</h3>
+                <p class="text-xl text-on-surface-variant font-light leading-relaxed mb-12">
+                    C'est pourquoi nous déployons des modèles de langage (LLMs) souverains et privés. Vos données, celles de vos clients et vos stratégies juridiques ne quittent jamais votre infrastructure cloud sécurisée basée en Europe. Aucune donnée n'est utilisée pour entraîner des modèles publics.
+                </p>
+            </div>
+        </section>
+        
+        <!-- CTA -->
+        <section id="audit" class="py-32 bg-background relative overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,238,252,0.05)_0%,transparent_70%)]"></div>
+            <div class="max-w-3xl mx-auto px-8 text-center relative z-10">
+                <h2 class="text-4xl font-black font-headline text-on-surface mb-6">Prêt à moderniser votre cabinet ?</h2>
+                <p class="text-lg text-on-surface-variant mb-10">Discutons de vos flux documentaires et découvrez la valeur de l'IA pour votre cabinet lors d'un audit de 30 minutes, 100% gratuit.</p>
+                <a href="audit-ia.html" class="inline-block bg-primary text-on-secondary-container font-black text-xl py-5 px-10 rounded-full hover:shadow-[0_0_30px_rgba(0,238,252,0.5)] transition-all active:scale-95">
+                    Planifier l'Audit Gratuit
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest w-full py-16 px-8 border-t border-on-surface/5 relative z-50">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto mb-12">
+            <div class="md:col-span-1">
+                <div class="text-lg font-bold text-primary font-headline mb-4">Digital Technology <span class="text-on-surface-variant font-normal">| Humain &amp; IA</span></div>
+                <p class="text-on-surface-variant text-sm leading-relaxed">Augmentez votre productivité, libérez vos talents et transformez votre entreprise grâce à une IA éthique et sur-mesure pour les PME en Belgique.</p>
+            </div>
+            <div class="md:col-span-1 flex flex-col gap-3">
+                <h6 class="font-label text-xs uppercase tracking-[0.2em] text-on-surface/50 mb-2">Secteurs B2B</h6>
+                <div class="flex flex-col gap-3">
+                    <a href="ia-accueil-telephonique.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors w-fit">IA pour l'Accueil & Rendez-vous</a>
+                    <a href="ia-pour-avocat.html" class="text-sm text-primary hover:text-primary transition-colors w-fit">IA pour Cabinets d'Avocats</a>
+                    <a href="ia-pour-comptable.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors w-fit">IA pour Bureaux Comptables</a>
+                    <a href="ia-pour-rh.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors w-fit">IA pour Ressources Humaines</a>
+                </div>
+            </div>
+            <div class="md:col-span-1 flex flex-col gap-3">
+                <h6 class="font-label text-xs uppercase tracking-[0.2em] text-on-surface/50 mb-2">Légal & Entreprise</h6>
+                <a class="text-sm text-on-surface-variant hover:text-primary transition-colors w-fit" href="qui-sommes-nous.html">L'Équipe</a>
+                <a class="text-sm text-on-surface-variant hover:text-primary transition-colors w-fit" href="mentions-legales.html">Mentions Légales</a>
+                <a class="text-sm text-on-surface-variant hover:text-primary transition-colors w-fit" href="politique-confidentialite.html">Politique de Confidentialité</a>
+            </div>
+            <div class="md:col-span-1">
+                <h6 class="font-label text-xs uppercase tracking-[0.2em] text-on-surface/50 mb-4">Contact &amp; Adresse</h6>
+                <address class="text-on-surface-variant text-sm not-italic flex flex-col gap-3">
+                    <p class="flex items-start gap-2"><span class="material-symbols-outlined text-[1.1rem] text-primary">location_on</span> <span>Chaussée du Roeulx, 443<br>7062 Soignies</span></p>
+                    <p class="flex items-center gap-2"><span class="material-symbols-outlined text-[1.1rem] text-primary">call</span> 067 / 34 16 20</p>
+                    <p class="flex items-center gap-2"><span class="material-symbols-outlined text-[1.1rem] text-primary">mail</span> <a href="mailto:info@digitaltechnology.be" class="hover:text-on-surface transition-colors">info@digitaltechnology.be</a></p>
+                </address>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-on-surface/10 flex flex-col md:flex-row justify-between items-center">
+            <p class="font-label text-xs uppercase tracking-widest text-on-surface/40">© 2026 Digital Technology. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Simple reveal animation for elements with .reveal class
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                reveals.forEach(reveal => {
+                    const revealTop = reveal.getBoundingClientRect().top;
+                    const revealPoint = 100;
+                    
+                    if(revealTop < windowHeight - revealPoint) {
+                        reveal.classList.add('active');
+                        reveal.style.opacity = '1';
+                        reveal.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Initial styling
+            reveals.forEach(reveal => {
+                if(!reveal.classList.contains('active')) {
+                    reveal.style.opacity = '0';
+                    reveal.style.transform = 'translateY(30px)';
+                    reveal.style.transition = 'all 0.8s ease-out';
+                }
+            });
+            
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger on load
+            
+            // Header scroll effect
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('py-2');
+                    header.classList.remove('py-4');
+                } else {
+                    header.classList.add('py-4');
+                    header.classList.remove('py-2');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

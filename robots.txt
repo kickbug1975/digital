@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Block internal/technical files
+Disallow: /batch_update.js
+Disallow: /batch_update_tailwind.js
+Disallow: /switch_light.js
+Disallow: /switch_light_css.js
+Disallow: /error.log
+Disallow: /tailwind.config.js
+Disallow: /input.css
+Disallow: /prd_humain_ia_landing_page.html
+Disallow: /template-industrie.html
+
+Sitemap: https://www.digitaltechnology.be/sitemap.xml

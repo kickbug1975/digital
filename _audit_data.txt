@@ -1,0 +1,10 @@
+index.html|50300|og=Y|tw=Y|bc=N|can=Y|desc=Y|h1=1|h2=6|ld=1|lk=12|img=5|alt=5|inl=0|pre=Y|noi=N|vp=Y|cs=Y|lang=Y|fav=N|lazy=2
+ia-pour-avocat.html|29877|og=Y|tw=Y|bc=Y|can=Y|desc=Y|h1=1|h2=4|ld=3|lk=13|img=2|alt=2|inl=1|pre=Y|noi=N|vp=Y|cs=Y|lang=Y|fav=N|lazy=0
+ia-pour-comptable.html|29839|og=Y|tw=Y|bc=Y|can=Y|desc=Y|h1=1|h2=4|ld=3|lk=13|img=2|alt=2|inl=1|pre=Y|noi=N|vp=Y|cs=Y|lang=Y|fav=N|lazy=0
+ia-pour-rh.html|31988|og=Y|tw=Y|bc=Y|can=Y|desc=Y|h1=1|h2=4|ld=2|lk=13|img=2|alt=2|inl=1|pre=Y|noi=N|vp=Y|cs=Y|lang=Y|fav=N|lazy=0
+ia-accueil-telephonique.html|30753|og=Y|tw=Y|bc=Y|can=Y|desc=Y|h1=1|h2=4|ld=2|lk=13|img=2|alt=2|inl=1|pre=Y|noi=N|vp=Y|cs=Y|lang=Y|fav=N|lazy=0
+guide-ia-pme-2026.html|19160|og=Y|tw=Y|bc=Y|can=Y|desc=Y|h1=1|h2=3|ld=2|lk=7|img=2|alt=2|inl=0|pre=Y|noi=N|vp=Y|cs=Y|lang=Y|fav=N|lazy=0
+audit-ia.html|28651|og=Y|tw=Y|bc=Y|can=Y|desc=Y|h1=1|h2=5|ld=1|lk=6|img=1|alt=1|inl=1|pre=Y|noi=N|vp=Y|cs=Y|lang=Y|fav=N|lazy=0
+qui-sommes-nous.html|11853|og=Y|tw=Y|bc=Y|can=Y|desc=Y|h1=1|h2=1|ld=1|lk=15|img=1|alt=1|inl=0|pre=Y|noi=N|vp=Y|cs=Y|lang=Y|fav=N|lazy=0
+mentions-legales.html|7667|og=N|tw=N|bc=N|can=Y|desc=Y|h1=1|h2=4|ld=0|lk=7|img=1|alt=1|inl=0|pre=N|noi=N|vp=Y|cs=Y|lang=Y|fav=N|lazy=0
+politique-confidentialite.html|8323|og=N|tw=N|bc=N|can=Y|desc=Y|h1=1|h2=5|ld=0|lk=7|img=1|alt=1|inl=0|pre=N|noi=N|vp=Y|cs=Y|lang=Y|fav=N|lazy=0
