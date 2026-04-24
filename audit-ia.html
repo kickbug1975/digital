@@ -8,12 +8,12 @@
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Audit IA Gratuit pour PME belges | Digital Technology">
     <meta property="og:description" content="Évaluez la maturité numérique de votre PME et découvrez comment l'Intelligence Artificielle peut booster votre productivité.">
-    <meta property="og:image" content="https://www.digitaltechnology.be/asset/logo_icon_navy.png">
-    <meta property="og:url" content="https://www.digitaltechnology.be/audit-ia.html">
+    <meta property="og:image" content="https://www.humain-ai.be/asset/logo_icon_navy.png">
+    <meta property="og:url" content="https://www.humain-ai.be/audit-ia.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     
-    <link rel="canonical" href="https://www.digitaltechnology.be/audit-ia.html" />
+    <link rel="canonical" href="https://www.humain-ai.be/audit-ia.html" />
     
     <!-- BreadcrumbList Schema -->
     <script type="application/ld+json">
@@ -25,13 +25,13 @@
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Accueil",
-                "item": "https://www.digitaltechnology.be/"
+                "item": "https://www.humain-ai.be/"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Audit IA Gratuit",
-                "item": "https://www.digitaltechnology.be/audit-ia.html"
+                "item": "https://www.humain-ai.be/audit-ia.html"
             }
         ]
     }
@@ -443,16 +443,40 @@
                         updateUI();
                     } else {
                         // Submit form / show success
-                        // In a real scenario, an AJAX post to formspree or similar would happen here.
-                        
                         btnNext.disabled = true;
                         btnNext.innerHTML = `<span class="material-symbols-outlined animate-spin text-sm">sync</span> Envoi...`;
                         
-                        // Fake delay to simulate network
-                        setTimeout(() => {
-                            currentStep++; // Go to step-success
-                            updateUI();
-                        }, 800);
+                        const formData = {
+                            secteur: document.querySelector('input[name="secteur"]:checked')?.value,
+                            taille: document.querySelector('input[name="taille"]:checked')?.value,
+                            besoins: Array.from(document.querySelectorAll('input[name="besoins"]:checked')).map(cb => cb.value),
+                            prenom: document.getElementById('prenom').value.trim(),
+                            nom: document.getElementById('nom').value.trim(),
+                            societe: document.getElementById('societe').value.trim(),
+                            email: document.getElementById('email').value.trim()
+                        };
+
+                        fetch('https://n8n.dim1975.shop/webhook/audit-ia', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(formData)
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                currentStep++; // Go to step-success
+                                updateUI();
+                            } else {
+                                throw new Error('Network response was not ok');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Erreur:', error);
+                            alert("Une erreur est survenue lors de l'envoi de votre demande. Veuillez réessayer.");
+                            btnNext.disabled = false;
+                            btnNext.innerHTML = `Terminer <span class="material-symbols-outlined text-sm">check</span>`;
+                        });
                     }
                 }
             });
