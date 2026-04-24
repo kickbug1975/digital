@@ -1,0 +1,45 @@
+name: 🚀 Deploy to Infomaniak
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy via FTP
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🚀 Deploy to Infomaniak via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /web/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            tailwindcss.exe
+            error.log
+            tailwind-error.txt
+            _audit_data.txt
+            _audit_titles.txt
+            _full_audit.md
+            seo_audit_data.txt
+            seo_img_data.txt
+            batch_update.js
+            batch_update_tailwind.js
+            switch_light.js
+            switch_light_css.js
+            input.css
+            tailwind.config.js
+            package.json
+            package-lock.json
+            .env
+            _bmad/**
+            stitch/**
