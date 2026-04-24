@@ -1,50 +1,50 @@
-FILE=index.html
+﻿FILE=index.html
 TITLE(63)=Agence Int?gration IA pour PME en Belgique | Digital Technology
 DESC(132)=Digital Technology pr?sente Humain & IA. Augmentez votre productivit? gr?ce ? un...
-CAN=https://www.digitaltechnology.be/
+CAN=https://www.humain-ai.be/
 ---
 FILE=ia-pour-avocat.html
 TITLE(74)=IA pour Avocats &amp; Cabinets Juridiques en Belgique | Digital Technology
 DESC(170)=D?couvrez comment l'Intelligence Artificielle transforme le quotidien des cabine...
-CAN=https://www.digitaltechnology.be/ia-pour-avocat.html
+CAN=https://www.humain-ai.be/ia-pour-avocat.html
 ---
 FILE=ia-pour-comptable.html
 TITLE(69)=IA pour Comptables &amp; Fiduciaires en Belgique | Digital Technology
 DESC(176)=D?couvrez comment l'Intelligence Artificielle transforme les fiduciaires et bure...
-CAN=https://www.digitaltechnology.be/ia-pour-comptable.html
+CAN=https://www.humain-ai.be/ia-pour-comptable.html
 ---
 FILE=ia-pour-rh.html
 TITLE(69)=IA pour les Ressources Humaines (RH) en Belgique | Digital Technology
 DESC(176)=D?couvrez comment l'Intelligence Artificielle r?volutionne les Ressources Humain...
-CAN=https://www.digitaltechnology.be/ia-pour-rh.html
+CAN=https://www.humain-ai.be/ia-pour-rh.html
 ---
 FILE=ia-accueil-telephonique.html
 TITLE(65)=IA Vocale & Accueil T?l?phonique Intelligent | Digital Technology
 DESC(188)=D?couvrez comment l'Agent Vocal IA transforme votre accueil t?l?phonique. Lib?re...
-CAN=https://www.digitaltechnology.be/ia-accueil-telephonique.html
+CAN=https://www.humain-ai.be/ia-accueil-telephonique.html
 ---
 FILE=guide-ia-pme-2026.html
 TITLE(46)=L'IA en PME en Belgique : Guide de Survie 2026
 DESC(138)=Comment transformer la pression ?conomique en avantage concurrentiel d?cisif pou...
-CAN=https://www.digitaltechnology.be/guide-ia-pme-2026.html
+CAN=https://www.humain-ai.be/guide-ia-pme-2026.html
 ---
 FILE=audit-ia.html
 TITLE(53)=Audit IA Gratuit pour PME belges | Digital Technology
 DESC(181)=Demandez votre Audit IA Gratuit avec Digital Technology. ?valuez la maturit? num...
-CAN=https://www.digitaltechnology.be/audit-ia.html
+CAN=https://www.humain-ai.be/audit-ia.html
 ---
 FILE=qui-sommes-nous.html
 TITLE(45)=Qui sommes-nous | L'?quipe Digital Technology
 DESC(81)=D?couvrez Digital Technology, l'?quipe derri?re votre int?gration IA en Belgique...
-CAN=https://www.digitaltechnology.be/qui-sommes-nous.html
+CAN=https://www.humain-ai.be/qui-sommes-nous.html
 ---
 FILE=mentions-legales.html
 TITLE(37)=Mentions L?gales | Digital Technology
 DESC(113)=Mentions L?gales de Digital Technology. Informations sur l'?diteur, l'h?bergemen...
-CAN=https://www.digitaltechnology.be/mentions-legales.html
+CAN=https://www.humain-ai.be/mentions-legales.html
 ---
 FILE=politique-confidentialite.html
 TITLE(49)=Politique de Confidentialit? | Digital Technology
 DESC(135)=Politique de Confidentialit? de Digital Technology. Comment nous g?rons et prot?...
-CAN=https://www.digitaltechnology.be/politique-confidentialite.html
+CAN=https://www.humain-ai.be/politique-confidentialite.html
 ---

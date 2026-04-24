@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
 # Block internal/technical files
@@ -12,4 +12,4 @@ Disallow: /input.css
 Disallow: /prd_humain_ia_landing_page.html
 Disallow: /template-industrie.html
 
-Sitemap: https://www.digitaltechnology.be/sitemap.xml
+Sitemap: https://www.humain-ai.be/sitemap.xml

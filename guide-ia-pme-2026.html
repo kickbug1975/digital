@@ -220,9 +220,10 @@
                     <p class="text-on-surface-variant text-sm mb-8">Obtenez un accès instantané aux chapitres sur le cadre Légal EU AI Act, les Stratégies de Subsides Régionaux, et le Plan d'Implémentation en 30 jours.</p>
                     
                     <form class="space-y-4 text-left" id="ebook-form">
-                        <input required type="text" placeholder="Prénom" class="w-full bg-surface-container-lowest border border-on-surface/10 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface/30 transition-colors">
-                        <input required type="email" placeholder="E-mail professionnel" class="w-full bg-surface-container-lowest border border-on-surface/10 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface/30 transition-colors">
-                        <input required type="text" placeholder="Entreprise" class="w-full bg-surface-container-lowest border border-on-surface/10 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface/30 transition-colors">
+                        <input required type="text" id="prenom" placeholder="Prénom" class="w-full bg-surface-container-lowest border border-on-surface/10 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface/30 transition-colors">
+                        <input required type="email" id="email" placeholder="E-mail professionnel" class="w-full bg-surface-container-lowest border border-on-surface/10 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface/30 transition-colors">
+                        <input type="tel" id="telephone" placeholder="Téléphone" class="w-full bg-surface-container-lowest border border-on-surface/10 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface/30 transition-colors">
+                        <input required type="text" id="societe" placeholder="Entreprise" class="w-full bg-surface-container-lowest border border-on-surface/10 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-on-surface placeholder:text-on-surface/30 transition-colors">
                         
                         <button type="submit" class="w-full bg-primary text-white font-black py-4 rounded-xl hover:shadow-[0_0_20px_rgba(26,66,136,0.2)] transition-all flex justify-center items-center gap-2 mt-4">
                             Je télécharge mon Guide de Survie <span class="material-symbols-outlined">download</span>
@@ -276,12 +277,12 @@
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = `<span class="material-symbols-outlined animate-spin text-sm">sync</span> Envoi...`;
 
-                // Retrieve values from the inputs directly as they are required and follow a strict order
-                const inputs = ebookForm.querySelectorAll('input');
+                // Retrieve values using IDs
                 const formData = {
-                    prenom: inputs[0].value.trim(),
-                    email: inputs[1].value.trim(),
-                    societe: inputs[2].value.trim()
+                    prenom: document.getElementById('prenom').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    telephone: document.getElementById('telephone').value.trim(),
+                    societe: document.getElementById('societe').value.trim()
                 };
 
                 fetch('https://n8n.dim1975.shop/webhook/ebook-leads', {
@@ -310,3 +311,5 @@
     </script>
 </body>
 </html>
+
+
