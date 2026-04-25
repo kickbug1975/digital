@@ -19,8 +19,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /w_humain-ia/
-          state-name: .ftp-deploy-sync-state-v3.json
+          server-dir: w_humain-ia/
+          state-name: .ftp-deploy-sync-state-v4.json
           exclude: |
             **/.git*
             **/.git*/**
