@@ -19,7 +19,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /web/
+          server-dir: /w_humain-ia/
           exclude: |
             **/.git*
             **/.git*/**
