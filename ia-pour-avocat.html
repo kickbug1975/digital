@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8"/>
@@ -27,6 +27,11 @@
     <style>
         .glass-panel {
             background: rgba(255, 255, 255, 0.7);
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
         }
@@ -43,16 +48,17 @@
       "provider": {
         "@type": "ProfessionalService",
         "name": "Digital Technology",
-        "url": "https://www.humain-ai.be"
+        "url": "https://www.humain-ai.be",
+        "@id": "https://www.humain-ai.be/#organization"
       },
-      "description": "Automatisez l'analyse de contrats, facilitez la recherche de jurisprudence et libérez jusqu'à 30% de temps facturable supplémentaire. Sans compromis sur le secret professionnel. <a href="guide-ia-pme-2026.html" class="text-primary/80 hover:underline text-base">Consultez notre guide IA 2026 pour PME →</a>",
+      "description": "Automatisez l'analyse de contrats, facilitez la recherche de jurisprudence et libérez jusqu'à 30% de temps facturable supplémentaire. Sans compromis sur le secret professionnel.",
       "areaServed": {
         "@type": "Country",
         "name": "Belgique"
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Services IA",
+        "name": "Services IA pour Avocats",
         "itemListElement": [
           {
             "@type": "Offer",
@@ -65,6 +71,7 @@
       }
     }
     </script>
+    <!-- FAQ Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -84,6 +91,29 @@
           "text": "Absolument. Nous utilisons les API existantes de ces logiciels pour faire le pont. L'IA peut automatiquement récupérer un document, en extraire la substance et l'injecter directement dans le dossier."
         }
       }]
+    }
+    </script>
+    <!-- GEO: WebPage + Wikidata Entities -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "IA pour Avocats & Cabinets Juridiques en Belgique",
+      "url": "https://www.humain-ai.be/ia-pour-avocat.html",
+      "description": "Solutions d'intelligence artificielle pour cabinets d'avocats en Belgique : analyse de contrats, recherche de jurisprudence, Private LLM conforme au secret professionnel.",
+      "inLanguage": "fr-BE",
+      "dateModified": "2026-04-25",
+      "isPartOf": { "@id": "https://www.humain-ai.be/#website" },
+      "about": [
+        { "@type": "Thing", "name": "Intelligence Artificielle", "sameAs": "https://www.wikidata.org/wiki/Q11660" },
+        { "@type": "Thing", "name": "Droit", "sameAs": "https://www.wikidata.org/wiki/Q7748" }
+      ],
+      "mentions": [
+        { "@type": "Country", "name": "Belgique", "sameAs": "https://www.wikidata.org/wiki/Q31" },
+        { "@type": "Thing", "name": "Secret professionnel", "sameAs": "https://www.wikidata.org/wiki/Q1058290" },
+        { "@type": "Thing", "name": "Contrat", "sameAs": "https://www.wikidata.org/wiki/Q93288" }
+      ],
+      "provider": { "@id": "https://www.humain-ai.be/#organization" }
     }
     </script>
     <script type="application/ld+json">

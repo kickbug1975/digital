@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,6 @@
 
     <link rel="canonical" href="https://www.humain-ai.be/guide-ia-pme-2026.html" />
 
-    <!-- Tailwind CSS (via CDN comme sur index) -->
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,38 +24,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <style>
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-        }
-        .text-gradient {
-            background: linear-gradient(135deg, #1A4288 0%, #1A1B1F 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gated-gradient {
-            background: linear-gradient(to bottom, rgba(250,250,250,0) 0%, rgba(250,250,250,0.95) 20%, rgba(250,250,250,1) 100%);
-        }
-        /* Reveal animation */
+        .glass-panel { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+        .text-gradient { background: linear-gradient(135deg, #1A4288 0%, #1A1B1F 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .gated-gradient { background: linear-gradient(to bottom, rgba(250,250,250,0) 0%, rgba(250,250,250,0.95) 20%, rgba(250,250,250,1) 100%); }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        
-        /* 3D Model hover effect logic */
-        .book-container {
-            perspective: 1200px;
-        }
-        .book-3d {
-            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-            transform-style: preserve-3d;
-        }
-        .book-container:hover .book-3d {
-            transform: rotateY(15deg) rotateX(5deg) scale(1.05); /* Slight interactive parralax */
-        }
-        .book-container:active .book-3d {
-            transform: rotateY(5deg) rotateX(2deg) scale(0.95);
-        }
+        .book-container { perspective: 1200px; }
+        .book-3d { transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); transform-style: preserve-3d; }
+        .book-container:hover .book-3d { transform: rotateY(15deg) rotateX(5deg) scale(1.05); }
+        .book-container:active .book-3d { transform: rotateY(5deg) rotateX(2deg) scale(0.95); }
     </style>
     
     <!-- Article Schema Markup -->
@@ -78,7 +54,11 @@
           "@type": "ImageObject",
           "url": "https://www.humain-ai.be/asset/logo_icon_navy.png"
         }
-      }
+      },
+      "datePublished": "2026-04-04",
+      "dateModified": "2026-04-25",
+      "inLanguage": "fr-BE",
+      "mainEntityOfPage": "https://www.humain-ai.be/guide-ia-pme-2026.html"
     }
     </script>
     <link rel="stylesheet" href="css/tailwind.css">
@@ -100,6 +80,28 @@
                 "item": "https://www.humain-ai.be/guide-ia-pme-2026.html"
             }
         ]
+    }
+    </script>
+    <!-- GEO: WebPage + Wikidata Entities -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Guide IA pour PME en Belgique 2026",
+      "url": "https://www.humain-ai.be/guide-ia-pme-2026.html",
+      "description": "Comment transformer la pression économique en avantage concurrentiel décisif pour les PME en Belgique grâce à l'Intelligence Artificielle.",
+      "inLanguage": "fr-BE",
+      "dateModified": "2026-04-25",
+      "isPartOf": { "@id": "https://www.humain-ai.be/#website" },
+      "about": [
+        { "@type": "Thing", "name": "Intelligence Artificielle", "sameAs": "https://www.wikidata.org/wiki/Q11660" },
+        { "@type": "Thing", "name": "Petite et moyenne entreprise", "sameAs": "https://www.wikidata.org/wiki/Q622439" }
+      ],
+      "mentions": [
+        { "@type": "Country", "name": "Belgique", "sameAs": "https://www.wikidata.org/wiki/Q31" },
+        { "@type": "Thing", "name": "Transformation numérique", "sameAs": "https://www.wikidata.org/wiki/Q15328505" }
+      ],
+      "provider": { "@id": "https://www.humain-ai.be/#organization" }
     }
     </script>
     <link rel="icon" type="image/png" href="asset/logo_icon_navy.png">

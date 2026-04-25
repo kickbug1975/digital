@@ -1,4 +1,4 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 
 # Block internal/technical files
@@ -11,5 +11,21 @@ Disallow: /tailwind.config.js
 Disallow: /input.css
 Disallow: /prd_humain_ia_landing_page.html
 Disallow: /template-industrie.html
+
+# AI Engine Crawlers - Explicitly Allowed for GEO
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
 
 Sitemap: https://www.humain-ai.be/sitemap.xml

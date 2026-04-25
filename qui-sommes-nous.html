@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8"/>
@@ -46,6 +46,40 @@
             }
         ]
     }
+    </script>
+    <!-- GEO: AboutPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "L'Équipe Digital Technology",
+      "url": "https://www.humain-ai.be/qui-sommes-nous.html",
+      "description": "Découvrez l'équipe d'experts en intégration IA pour PME belges chez Digital Technology.",
+      "inLanguage": "fr-BE",
+      "dateModified": "2026-04-25",
+      "isPartOf": { "@id": "https://www.humain-ai.be/#website" },
+      "mainEntity": { "@id": "https://www.humain-ai.be/#organization" }
+    }
+    </script>
+    <!-- GEO: Person Schemas (E-E-A-T) -->
+    <script type="application/ld+json">
+    [{
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dimitri Puche",
+      "jobTitle": "Expert & Intégrateur Stratégique",
+      "url": "https://www.linkedin.com/in/dimitri-puche-a0683238a/",
+      "worksFor": { "@id": "https://www.humain-ai.be/#organization" },
+      "knowsAbout": ["Intelligence Artificielle", "Transformation numérique", "PME", "Intégration IA"]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Marc Duray",
+      "jobTitle": "Architecte IT & Infrastructure",
+      "worksFor": { "@id": "https://www.humain-ai.be/#organization" },
+      "knowsAbout": ["LLM privés", "Infrastructure cloud", "Sécurité des données", "Déploiement IA"]
+    }]
     </script>
     <link rel="icon" type="image/png" href="asset/logo_icon_navy.png">
 </head>
