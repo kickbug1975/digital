@@ -1,0 +1,10 @@
+/* TEAM */
+Creator: Dimitri Puche
+LinkedIn: https://www.linkedin.com/in/dimitri-puche-a0683238a/
+Contact: dimitri@digitaltechnology.be
+
+/* SITE */
+Last update: 2026
+Language: French
+Doctype: HTML5
+IDE: Cursor / AI Assistant
