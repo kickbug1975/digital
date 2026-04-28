@@ -75,8 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Appel Webhook n8n
             try {
-                // Remplacer par l'URL exacte du Webhook de production si nécessaire 
-                const WEBHOOK_URL = "https://n8n.dim1975.shop/webhook/roi_lead_genneration";
+                const WEBHOOK_URL = "n8n.dim1975.shop/webhook/roi_lead_genneration";
                 
                 await fetch(WEBHOOK_URL, {
                     method: 'POST',
