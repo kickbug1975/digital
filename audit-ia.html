@@ -292,6 +292,14 @@
                                     <span class="font-bold text-on-surface">Automatiser des tâches répétitives (encodage, facturation...)</span>
                                 </label>
                             </div>
+
+                            <div class="mt-6">
+                                <label class="block text-sm font-bold text-on-surface mb-2" for="audit-description">Décrivez brièvement votre projet ou vos attentes (Optionnel)</label>
+                                <textarea id="audit-description" rows="3"
+                                    class="w-full bg-surface-container-low px-5 py-4 rounded-xl border border-outline-variant/50 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-on-surface/30 resize-none"
+                                    placeholder="Exemple: J'aimerais automatiser la gestion de mes e-mails de support client et intégrer une IA pour répondre aux questions fréquentes..."></textarea>
+                            </div>
+
                             <p id="error-step-3" class="text-error text-sm font-medium mt-4 hidden">Veuillez sélectionner au moins un objectif.</p>
                         </div>
 
@@ -493,6 +501,7 @@
                             secteur: document.querySelector('input[name="secteur"]:checked')?.value,
                             taille: document.querySelector('input[name="taille"]:checked')?.value,
                             besoins: Array.from(document.querySelectorAll('input[name="besoins"]:checked')).map(cb => cb.value),
+                            description: document.getElementById('audit-description')?.value.trim() || '',
                             prenom: document.getElementById('prenom').value.trim(),
                             nom: document.getElementById('nom').value.trim(),
                             societe: document.getElementById('societe').value.trim(),
