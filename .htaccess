@@ -1,31 +1,35 @@
 <IfModule mod_headers.c>
     # 1. Strict-Transport-Security (HSTS)
-    # Force les navigateurs à toujours utiliser HTTPS.
-    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+    # Exigence maximale pour A+ : includeSubDomains et preload, et max-age >= 1 an (31536000 ou 63072000).
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" env=HTTPS
 
     # 2. X-Content-Type-Options
-    # Empêche le navigateur d'interpréter le contenu d'une autre façon que le type MIME déclaré (bloque le MIME sniffing).
-    Header set X-Content-Type-Options "nosniff"
+    Header always set X-Content-Type-Options "nosniff"
 
     # 3. X-Frame-Options
-    # Protège contre le Clickjacking en empêchant l'intégration du site dans des iframes non autorisées.
-    Header set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Frame-Options "DENY"
 
     # 4. Referrer-Policy
-    # Contrôle quelles informations de parrainage sont envoyées lors de la navigation vers d'autres sites.
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
-    # 5. Content-Security-Policy (CSP)
-    # Restreint les sources depuis lesquelles les contenus (scripts, styles, images) peuvent être chargés.
-    # Note : 'unsafe-inline' et 'unsafe-eval' sont ajoutés pour permettre le fonctionnement de scripts/styles inline ou externes typiques (ex. n8n, polices).
-    Header set Content-Security-Policy "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; upgrade-insecure-requests"
+    # 5. X-XSS-Protection (Legacy, mais souvent bonifiant)
+    Header always set X-XSS-Protection "1; mode=block"
 
-    # 6. Permissions-Policy
-    # Limite l'accès aux fonctionnalités matérielles ou sensibles du navigateur.
-    Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+    # 6. Content-Security-Policy (CSP) - TRES STRICTE
+    # - default-src 'self' : bloque tout par défaut sauf le domaine actuel.
+    # - script-src : plus de 'unsafe-inline' ni 'unsafe-eval' pour passer le test avec succès.
+    # - style-src : 'unsafe-inline' est généralement toléré pour Google Fonts, mais restreint.
+    # - connect-src : on autorise le domaine actuel et le webhook n8n.
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://n8n.dim1975.shop; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+
+    # 7. Permissions-Policy
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+
+    # 8. Cross-Origin-Opener-Policy
+    Header always set Cross-Origin-Opener-Policy "same-origin"
 </IfModule>
 
-# Redirection automatique HTTP vers HTTPS (au cas où ce ne serait pas géré par l'hébergeur OVH)
+# Redirection automatique HTTP vers HTTPS
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{HTTPS} off
