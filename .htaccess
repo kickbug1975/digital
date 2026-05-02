@@ -1,0 +1,33 @@
+<IfModule mod_headers.c>
+    # 1. Strict-Transport-Security (HSTS)
+    # Force les navigateurs à toujours utiliser HTTPS.
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+
+    # 2. X-Content-Type-Options
+    # Empêche le navigateur d'interpréter le contenu d'une autre façon que le type MIME déclaré (bloque le MIME sniffing).
+    Header set X-Content-Type-Options "nosniff"
+
+    # 3. X-Frame-Options
+    # Protège contre le Clickjacking en empêchant l'intégration du site dans des iframes non autorisées.
+    Header set X-Frame-Options "SAMEORIGIN"
+
+    # 4. Referrer-Policy
+    # Contrôle quelles informations de parrainage sont envoyées lors de la navigation vers d'autres sites.
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # 5. Content-Security-Policy (CSP)
+    # Restreint les sources depuis lesquelles les contenus (scripts, styles, images) peuvent être chargés.
+    # Note : 'unsafe-inline' et 'unsafe-eval' sont ajoutés pour permettre le fonctionnement de scripts/styles inline ou externes typiques (ex. n8n, polices).
+    Header set Content-Security-Policy "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval'; upgrade-insecure-requests"
+
+    # 6. Permissions-Policy
+    # Limite l'accès aux fonctionnalités matérielles ou sensibles du navigateur.
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+</IfModule>
+
+# Redirection automatique HTTP vers HTTPS (au cas où ce ne serait pas géré par l'hébergeur OVH)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
