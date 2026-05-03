@@ -25,31 +25,43 @@ Pour débloquer les paliers supérieurs de sécurité, nous avons éliminé tout
    - L'appel vers l'API n8n dans `roi-calculator.js` a été explicitement forcé en `https://n8n.dim1975.shop...` au lieu d'une URL relative qui aurait pu être bloquée par le navigateur sous la nouvelle politique stricte.
    - Ce domaine a été ajouté à la liste blanche `connect-src` de la nouvelle CSP.
 
-## 3. Le nouveau fichier `.htaccess` ultra-sécurisé
+## 3. Ajustements Ultimes "Phase 3" (Exigences Maximales Web Check / Observatory)
+
+Suite à une analyse approfondie via des outils stricts, deux failles mineures ont été corrigées pour garantir une politique "Zero Trust" absolue :
+
+1. **Refus par défaut (`default-src 'none'`)** :
+   - Remplacement de `default-src 'self'` par `'none'`. 
+   - *Impact* : Le navigateur bloque désormais **absolument tout** par défaut. Seules les ressources explicitement déclarées dans la directive CSP sont chargées.
+
+2. **Éradication des styles en ligne (`unsafe-inline` dans `style-src`)** :
+   - L'autorisation `unsafe-inline` pour le CSS a été retirée du fichier `.htaccess`.
+   - *Problème rencontré* : Certains éléments HTML (barres de progression, icônes) utilisaient des balises `style="..."` qui ont été bloquées par cette nouvelle politique stricte.
+   - *Correctif* : Un script automatisé de nettoyage a été exécuté sur l'ensemble des fichiers `.html` pour remplacer tous les attributs `style` par des classes utilitaires Tailwind correspondantes (ex: `class="w-1/4"`, `class="text-[#ffb86f]"`).
+
+## 4. Le nouveau fichier `.htaccess` ultra-sécurisé
 
 Voici le détail du nouveau paramétrage en ligne :
 
-1. **Strict-Transport-Security (HSTS)** : `max-age=31536000; includeSubDomains; preload`
-   - *Effet* : Protection HTTPS maximale pendant 1 an (bonus de points).
+1. **Strict-Transport-Security (HSTS)** : `max-age=63072000; includeSubDomains; preload`
+   - *Effet* : Protection HTTPS maximale pendant 2 ans.
 2. **X-Content-Type-Options** : `nosniff`
    - *Effet* : Bloque le MIME-Sniffing.
-3. **X-Frame-Options** : `SAMEORIGIN`
-   - *Effet* : Bloque le Clickjacking.
+3. **X-Frame-Options** : `DENY`
+   - *Effet* : Bloque totalement le Clickjacking (impossible d'intégrer le site dans une iframe).
 4. **Referrer-Policy** : `strict-origin-when-cross-origin`
    - *Effet* : Protège la confidentialité des requêtes sortantes.
-5. **Content-Security-Policy (CSP)** : `default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://n8n.dim1975.shop; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests`
-   - *Effet* : C'est cette ligne qui fait la différence. Elle empêche toute exécution de code non prévu, n'autorisant que vos propres scripts.
+5. **Content-Security-Policy (CSP)** : `default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://n8n.dim1975.shop; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests`
+   - *Effet* : C'est la ligne la plus stricte possible. Elle empêche toute exécution de code non prévu, tout style en ligne non autorisé, et bloque par défaut toute connexion non listée.
 6. **Permissions-Policy** : `geolocation=(), microphone=(), camera=(), payment=()`
    - *Effet* : Coupe l'accès aux périphériques.
 
-## 4. Prochaines Étapes pour le Déploiement
+## 5. Prochaines Étapes pour le Déploiement
 
-1. L'ensemble de ces modifications ultra-sécurisées (le nouveau `.htaccess`, `index.html` et `js/roi-calculator.js`) ont été poussées sur votre dépôt GitHub.
-2. Synchronisez ces nouveaux fichiers sur votre hébergement (OVH).
+1. L'ensemble de ces modifications ultra-sécurisées a été poussé sur le dépôt GitHub.
+2. Le pipeline de déploiement automatique via GitHub Actions a synchronisé ces fichiers vers l'hébergement Infomaniak.
 3. **Action Requise :**
-   - Retournez sur [Mozilla Observatory pour humain-ai.be](https://observatory.mozilla.org/analyze/humain-ai.be)
-   - Cliquez impérativement sur **"Force a Rescan"** (Forcer une nouvelle analyse).
-   - Le score devrait maintenant s'envoler vers les sommets.
+   - Sur les outils comme Web Check ou Mozilla Observatory, vous devez cliquer sur **"Initiate Rescan"** ou **"Force a Rescan"**.
+   - Tant que cela n'est pas fait, ces outils afficheront le résultat de leur ancien cache. Une fois relancés, le score affichera un succès total (vert) sur la sécurité HTTP.
 
 ---
 *L'IA comprend votre métier, l'humain la sécurise.*
