@@ -19,85 +19,143 @@ document.addEventListener('DOMContentLoaded', () => {
     const valHours = document.getElementById('val-hours');
     const valFinancial = document.getElementById('val-financial');
 
+    let isSubmitting = false;
+
+    // Fonctions de sécurité et de validation
+    const sanitizeHTML = (str) => {
+        if (!str) return '';
+        const temp = document.createElement('div');
+        temp.textContent = str;
+        return temp.innerHTML;
+    };
+
+    const isValidEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
+
     // Navigation Step 1 -> Step 2
     if(btnNext1) {
         btnNext1.addEventListener('click', () => {
             // Validation simple
-            const name = document.getElementById('roi-name').value;
-            const email = document.getElementById('roi-email').value;
-            const company = document.getElementById('roi-company').value;
+            const name = document.getElementById('roi-name').value.trim();
+            const email = document.getElementById('roi-email').value.trim();
+            const company = document.getElementById('roi-company').value.trim();
+            
             if(!name || !email || !company) {
                 alert("Veuillez remplir votre nom, email et société.");
                 return;
             }
+            if(!isValidEmail(email)) {
+                alert("Veuillez entrer une adresse e-mail valide.");
+                return;
+            }
+            
             goToStep(2);
         });
     }
 
     // Submit Form -> Step 3 (Calcul et Webhook)
-    if(formROI) {
-        formROI.addEventListener('submit', async (e) => {
+    const btnCalc = document.getElementById('btn-calc');
+    if(btnCalc) {
+        btnCalc.addEventListener('click', async (e) => {
             e.preventDefault();
+            console.log("Bouton btn-calc cliqué !");
             
-            // Récupération des données
-            const checkboxes = document.querySelectorAll('input[name="roi-besoins"]:checked');
-            const besoinsArray = Array.from(checkboxes).map(cb => cb.value);
-
-            const data = {
-                name: document.getElementById('roi-name').value,
-                email: document.getElementById('roi-email').value,
-                company: document.getElementById('roi-company').value,
-                phone: document.getElementById('roi-phone').value || '',
-                sector: document.getElementById('roi-sector').value,
-                besoins: besoinsArray.join(', '),
-                employees: parseInt(document.getElementById('roi-employees').value, 10),
-                avg_wage: parseFloat(document.getElementById('roi-wage').value || 30) // Par défaut 30€
-            };
-
-            if(isNaN(data.employees) || data.employees < 1) {
-                alert("Veuillez indiquer un nombre valide d'employés.");
-                return;
-            }
-
-            goToStep(3); // Affichage du loader "Calcul en cours..."
-
-            // Calcul du ROI
-            const efficiency = AI_EFFICIENCY[data.sector] || AI_EFFICIENCY.other;
-            const wastedHoursPerWeek = 15; // Estimé à 15h de tâches répétitives / semaine / employé
-            const weeksPerYear = 47; // Semaines travaillées
-
-            const hoursSavedPerYear = Math.round(data.employees * wastedHoursPerWeek * weeksPerYear * efficiency);
-            const loadedHourlyRate = data.avg_wage * LOADED_WAGE_FACTOR;
-            const financialGain = Math.round(hoursSavedPerYear * loadedHourlyRate);
-
-            data.hours_saved = hoursSavedPerYear;
-            data.financial_gain = financialGain;
-
-            // Appel Webhook n8n
             try {
-                const WEBHOOK_URL = "n8n.dim1975.shop/webhook/roi_lead_genneration";
-                
-                await fetch(WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-            } catch (error) {
-                console.error("Erreur lors de l'envoi au webhook n8n:", error);
-                // On continue silencieusement pour afficher le résultat à l'utilisateur
-            }
+                if (isSubmitting) {
+                    console.log("Déjà en cours de soumission...");
+                    return;
+                }
+                isSubmitting = true;
 
-            // Attente artificielle pour l'effet "WoWa"
-            setTimeout(() => {
-                // Formatage des nombres
-                valHours.textContent = new Intl.NumberFormat('fr-BE').format(hoursSavedPerYear);
-                valFinancial.textContent = new Intl.NumberFormat('fr-BE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(financialGain);
-                
-                const displayEmail = document.getElementById('display-email');
-                if (displayEmail) displayEmail.textContent = data.email;
-                
-                goToStep(4); // Affichage du résultat
-            }, 2500);
+                // Récupération et nettoyage des données (Sécurité: Sanitization)
+                console.log("Récupération des données...");
+                const checkboxes = document.querySelectorAll('input[name="roi-besoins"]:checked');
+                const besoinsArray = Array.from(checkboxes).map(cb => sanitizeHTML(cb.value));
+
+                const data = {
+                    name: sanitizeHTML(document.getElementById('roi-name').value.trim()),
+                    email: sanitizeHTML(document.getElementById('roi-email').value.trim()),
+                    company: sanitizeHTML(document.getElementById('roi-company').value.trim()),
+                    phone: sanitizeHTML(document.getElementById('roi-phone').value.trim()),
+                    sector: sanitizeHTML(document.getElementById('roi-sector').value),
+                    besoins: besoinsArray.join(', '),
+                    employees: parseInt(document.getElementById('roi-employees').value, 10),
+                    avg_wage: parseFloat(document.getElementById('roi-wage').value || 30) // Par défaut 30€
+                };
+                console.log("Données récupérées:", data);
+
+                // Double validation côté soumission
+                if(!data.name || !data.email || !data.company || !isValidEmail(data.email)) {
+                    alert("Informations de contact invalides. Veuillez vérifier l'étape 1.");
+                    goToStep(1);
+                    isSubmitting = false;
+                    return;
+                }
+
+                if(isNaN(data.employees) || data.employees < 1) {
+                    alert("Veuillez indiquer un nombre valide d'employés.");
+                    isSubmitting = false;
+                    return;
+                }
+
+                console.log("Validation réussie. Passage à l'étape 3...");
+                goToStep(3); // Affichage du loader "Calcul en cours..."
+
+                // Calcul du ROI
+                const efficiency = AI_EFFICIENCY[data.sector] || AI_EFFICIENCY.other;
+                const wastedHoursPerWeek = 15; // Estimé à 15h de tâches répétitives / semaine / employé
+                const weeksPerYear = 47; // Semaines travaillées
+
+                const hoursSavedPerYear = Math.round(data.employees * wastedHoursPerWeek * weeksPerYear * efficiency);
+                const loadedHourlyRate = data.avg_wage * LOADED_WAGE_FACTOR;
+                const financialGain = Math.round(hoursSavedPerYear * loadedHourlyRate);
+
+                data.hours_saved = hoursSavedPerYear;
+                data.financial_gain = financialGain;
+                console.log("ROI calculé:", { hoursSavedPerYear, financialGain });
+
+                // Appel Webhook n8n
+                try {
+                    const WEBHOOK_URL = "https://n8n.dim1975.shop/webhook/roi_lead_genneration";
+                    console.log("Envoi au Webhook n8n...");
+                    
+                    // Use URLSearchParams to send as form data
+                    const formData = new URLSearchParams();
+                    for (const [key, value] of Object.entries(data)) {
+                        formData.append(key, value);
+                    }
+                    
+                    await fetch(WEBHOOK_URL, {
+                        method: 'POST',
+                        mode: 'no-cors', // IMPORTANT: Permet l'envoi même si n8n ne renvoie pas les bons headers CORS
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: formData.toString()
+                    });
+                    console.log("Requête fetch terminée (no-cors mode ne permet pas de lire le status, mais l'envoi a eu lieu).");
+                } catch (error) {
+                    console.error("Erreur lors de l'envoi au webhook n8n:", error);
+                }
+
+                // Attente artificielle pour l'effet "WoWa"
+                setTimeout(() => {
+                    console.log("Affichage des résultats (étape 4)...");
+                    // Formatage des nombres
+                    if (valHours) valHours.textContent = new Intl.NumberFormat('fr-BE').format(hoursSavedPerYear);
+                    if (valFinancial) valFinancial.textContent = new Intl.NumberFormat('fr-BE', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(financialGain);
+                    
+                    const displayEmail = document.getElementById('display-email');
+                    if (displayEmail) displayEmail.textContent = data.email;
+                    
+                    goToStep(4); // Affichage du résultat
+                    isSubmitting = false;
+                }, 2500);
+
+            } catch (globalError) {
+                console.error("Erreur inattendue dans le calculateur ROI:", globalError);
+                alert("Une erreur inattendue est survenue lors du calcul. Veuillez réessayer.");
+                isSubmitting = false; // Réinitialiser pour permettre un autre essai
+            }
         });
     }
 
@@ -107,6 +165,14 @@ document.addEventListener('DOMContentLoaded', () => {
         btnRestart.addEventListener('click', () => {
             formROI.reset();
             goToStep(1);
+        });
+    }
+
+    // Bouton OK, Merci (Reload)
+    const btnReload = document.getElementById('btn-reload');
+    if (btnReload) {
+        btnReload.addEventListener('click', () => {
+            location.reload();
         });
     }
 

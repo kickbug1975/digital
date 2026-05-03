@@ -642,7 +642,7 @@
                     <!-- ROI Calculator Interactive Component -->
                     <div id="roi-calculator"
                         class="glass-panel p-8 md:p-12 rounded-[2.5rem] border border-on-surface/10 shadow-2xl relative">
-                        <form id="form-roi" class="w-full">
+                        <form id="form-roi" class="w-full" novalidate>
                             <!-- STEP 1: Contact info -->
                             <div id="roi-step-1" class="roi-step space-y-6 transition-all duration-500">
                                 <div class="text-center mb-8">
@@ -754,7 +754,7 @@
                                     </div>
                                 </div>
 
-                                <button type="submit" id="btn-calc"
+                                <button type="button" id="btn-calc"
                                     class="w-full bg-primary text-on-secondary-container font-black py-4 rounded-xl mt-4 hover:shadow-[0_0_20px_rgba(26,66,136,0.3)] transition-all flex items-center justify-center gap-2 group active:scale-[0.98]">
                                     Calculer mon ROI <span
                                         class="material-symbols-outlined text-sm group-hover:rotate-180 transition-transform duration-500">memory</span>
@@ -811,7 +811,7 @@
                                         d'audit détaillé a été demandé avec succès. Notre équipe va vous recontacter par
                                         e-mail ou téléphone pour planifier votre rendez-vous de découverte gratuit (15
                                         min).</p>
-                                    <button type="button" onclick="location.reload()"
+                                    <button type="button" id="btn-reload"
                                         class="bg-primary text-on-secondary-container font-black py-4 px-8 rounded-xl hover:shadow-[0_0_20px_rgba(26,66,136,0.3)] transition-all">OK,
                                         merci !</button>
                                 </div>
