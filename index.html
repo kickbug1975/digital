@@ -199,12 +199,12 @@
     <!-- Added class "header" so that js/main.js's scroll effect hook works properly -->
     <nav
         class="header fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_32px_32px_-4px_rgba(0,0,0,0.06)] transition-all">
-        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+        <div class="flex justify-between items-center px-4 md:px-8 py-4 max-w-7xl mx-auto gap-2">
             <a href="#"
-                class="flex items-center gap-3 group text-2xl font-black text-on-surface tracking-tighter font-headline">
+                class="flex items-center gap-2 md:gap-3 group text-xl md:text-2xl font-black text-on-surface tracking-tighter font-headline shrink-0">
                 <img src="asset/logo_icon_navy.webp" alt="Logo Humain & IA"
-                    class="h-10 w-auto group-hover:rotate-12 transition-transform duration-500">
-                <span>Humain <span class="text-primary">&amp;</span> IA</span>
+                    class="h-8 md:h-10 w-auto group-hover:rotate-12 transition-transform duration-500">
+                <span class="hidden sm:inline">Humain <span class="text-primary">&amp;</span> IA</span>
             </a>
             <div class="hidden md:flex items-center space-x-8">
                 <a class="text-on-surface/70 hover:text-on-surface transition-colors font-headline font-bold tracking-tight"
@@ -216,14 +216,14 @@
                 <a class="text-on-surface/70 hover:text-on-surface transition-colors font-headline font-bold tracking-tight"
                     href="#expertise">Expertise</a>
             </div>
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2 md:gap-4 shrink-0">
                 <a href="audit-ia.html" title="Faire l'audit gratuit"
-                    class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-headline font-bold hover:scale-105 active:scale-95 transition-all text-sm">
-                    Diagnostic IA (15min)
+                    class="bg-primary-container text-on-primary-container px-4 py-2 md:px-6 md:py-2 rounded-full font-headline font-bold hover:scale-105 active:scale-95 transition-all text-xs md:text-sm text-center">
+                    Diagnostic IA
                 </a>
                 <img src="asset/logo-digital-technology-expert-it.webp"
                     alt="Humain & IA - Experts locaux en intégration d'Intelligence Artificielle pour PME" width="200"
-                    height="64" class="h-16 w-auto mix-blend-multiply" />
+                    height="64" class="hidden lg:block h-12 md:h-16 w-auto mix-blend-multiply" />
             </div>
         </div>
     </nav>
@@ -237,7 +237,7 @@
                 class="absolute bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-primary-container/20 blur-[100px] rounded-full">
             </div>
 
-            <div class="max-w-7xl mx-auto px-8 w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="max-w-7xl mx-auto px-4 md:px-8 w-full grid md:grid-cols-2 gap-12 items-center relative z-10">
                 <div class="space-y-8 reveal">
                     <div
                         class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/20">
@@ -246,7 +246,7 @@
                             Humain & IA</span>
                     </div>
                     <h1
-                        class="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] font-headline text-on-surface">
+                        class="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] font-headline text-on-surface">
                         L’IA comprend votre métier, <span class="text-primary text-glow-primary">l’humain la
                             maîtrise.</span>
                     </h1>
@@ -254,15 +254,15 @@
                         Humain &amp; IA. Augmentez votre productivité, libérez vos talents et transformez votre
                         entreprise grâce à une IA éthique et sur-mesure.
                     </p>
-                    <div class="flex flex-wrap gap-4 pt-4">
+                    <div class="flex flex-col sm:flex-row flex-wrap gap-4 pt-4">
                         <a href="#audit"
-                            class="bg-primary text-on-secondary-container px-8 py-4 rounded-full font-bold text-lg hover:shadow-[0_0_25px_rgba(0, 104, 116, 0.2)] transition-all flex items-center gap-2 group active:scale-95">
-                            Planifier mon diagnostic gratuit
+                            class="w-full sm:w-auto justify-center bg-primary text-on-secondary-container px-6 py-4 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg hover:shadow-[0_0_25px_rgba(0, 104, 116, 0.2)] transition-all flex items-center gap-2 group active:scale-95">
+                            Planifier mon diagnostic
                             <span
                                 class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                         </a>
                         <a href="#pillars"
-                            class="flex items-center justify-center px-8 py-4 rounded-full font-bold text-lg border border-outline-variant/30 hover:bg-on-surface/5 transition-all text-on-surface active:scale-95">
+                            class="w-full sm:w-auto flex items-center justify-center px-6 py-4 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg border border-outline-variant/30 hover:bg-on-surface/5 transition-all text-on-surface active:scale-95">
                             Voir nos solutions
                         </a>
                     </div>
@@ -297,7 +297,7 @@
 
         <!-- Manifesto Section -->
         <section class="py-32 bg-surface-container-low relative" id="manifesto">
-            <div class="max-w-7xl mx-auto px-8 reveal">
+            <div class="max-w-7xl mx-auto px-4 md:px-8 reveal">
                 <div class="grid md:grid-cols-12 gap-16 items-center">
                     <div class="md:col-span-5">
                         <h2 class="font-label text-primary text-sm font-bold uppercase tracking-[0.3em] mb-4">Notre
@@ -349,7 +349,7 @@
 
         <!-- Pillars Section -->
         <section class="py-32 bg-background overflow-hidden" id="pillars">
-            <div class="max-w-7xl mx-auto px-8 mb-20 reveal">
+            <div class="max-w-7xl mx-auto px-4 md:px-8 mb-20 reveal">
                 <div class="flex flex-col md:flex-row justify-between items-end gap-8">
                     <div class="max-w-2xl">
                         <h2 class="text-4xl md:text-6xl font-black font-headline text-on-surface mb-6">Trois piliers
@@ -361,7 +361,7 @@
                 </div>
             </div>
 
-            <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-8">
+            <div class="max-w-7xl mx-auto px-4 md:px-8 grid md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div
                     class="group p-10 rounded-4xl bg-surface-container hover:bg-surface-container-high transition-all duration-500 border border-transparent hover:border-primary/20 reveal delay-100">
@@ -419,7 +419,7 @@
 
         <!-- Case Usage (Editorial Bento) -->
         <section class="py-32 bg-surface-container-low" id="cases">
-            <div class="max-w-7xl mx-auto px-8">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
                 <h2
                     class="text-center font-label text-primary text-sm font-bold uppercase tracking-[0.4em] mb-12 reveal">
                     Cas d'usage concrets</h2>
@@ -507,7 +507,7 @@
 
         <!-- Secteurs B2B Section (PSEO Hub) -->
         <section class="py-32 bg-surface-container-highest" id="secteurs">
-            <div class="max-w-7xl mx-auto px-8">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
                 <h2
                     class="text-center font-label text-primary text-sm font-bold uppercase tracking-[0.4em] mb-4 reveal">
                     Solutions par Métier</h2>
@@ -569,7 +569,7 @@
 
         <!-- Expertise/Trust Section -->
         <section class="py-32 bg-background" id="expertise">
-            <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-20 items-center reveal">
+            <div class="max-w-7xl mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-12 md:gap-20 items-center reveal">
                 <div class="relative">
                     <div class="absolute -top-10 -left-10 w-40 h-40 border-l-2 border-t-2 border-primary/30"></div>
                     <img class="rounded-3xl shadow-2xl relative z-10" loading="lazy" width="600" height="600"
