@@ -16,11 +16,11 @@
     Header always set X-XSS-Protection "1; mode=block"
 
     # 6. Content-Security-Policy (CSP) - TRES STRICTE
-    # - default-src 'self' : bloque tout par défaut sauf le domaine actuel.
+    # - default-src 'none' : bloque tout par défaut.
     # - script-src : plus de 'unsafe-inline' ni 'unsafe-eval' pour passer le test avec succès.
-    # - style-src : 'unsafe-inline' est généralement toléré pour Google Fonts, mais restreint.
+    # - style-src : sans 'unsafe-inline' (styles en ligne supprimés des HTML).
     # - connect-src : on autorise le domaine actuel et le webhook n8n.
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://n8n.dim1975.shop; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+    Header always set Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://n8n.dim1975.shop; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
 
     # 7. Permissions-Policy
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
