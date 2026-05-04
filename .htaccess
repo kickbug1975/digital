@@ -17,10 +17,10 @@
 
     # 6. Content-Security-Policy (CSP) - TRES STRICTE
     # - default-src 'none' : bloque tout par défaut.
-    # - script-src : plus de 'unsafe-inline' ni 'unsafe-eval' pour passer le test avec succès.
+    # - script-src : 'self' et googletagmanager pour autoriser Google Analytics.
     # - style-src : sans 'unsafe-inline' (styles en ligne supprimés des HTML).
-    # - connect-src : on autorise le domaine actuel et le webhook n8n.
-    Header always set Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://n8n.dim1975.shop; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+    # - connect-src : on autorise le domaine actuel, le webhook n8n, et google-analytics.
+    Header always set Content-Security-Policy "default-src 'none'; script-src 'self' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://n8n.dim1975.shop https://www.google-analytics.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
 
     # 7. Permissions-Policy
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
